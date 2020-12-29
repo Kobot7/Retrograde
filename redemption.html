@@ -1,0 +1,244 @@
+<!--Name: Ko Jia Ling
+    Admin no.: 190681D-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redemption</title>
+  <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/redemption.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="bootstrap-4.3.1-dist/jquery-3.4.1.min.js"></script>
+  <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/redemption.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <a class="navbar-brand retro" href="index.html">RETROGRADE</a>
+    <div class="navbar-toggler navbar-toggler-icon p-0" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="games.html">GAMES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="community.html">COMMUNITY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">CONTACT</a>
+        </li>
+        <li class="nav-item dropdown" id="data">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            DATA
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="formData.html">FORM DATA</a>
+            <a class="dropdown-item" href="redemptionData.html">REDEMPTION DATA</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li id="loginSignUp">
+          <a class="nav-link" href="login.html"><i class="fa fa-user" aria-hidden="true"></i> LOG IN | SIGN UP</a>
+        </li>
+
+        <div class="dropdown dropdown-menu-right" id="profileDropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="" alt="">
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item active" href="#">REDEMPTION</a>
+            <a class="dropdown-item" href="#" onclick="viewOwnProfile()"><i class="fa fa-user"></i> PROFILE</a>
+            <a class="dropdown-item" href="settings.html"><i class="fa fa-wrench"></i> SETTINGS</a>
+            <a class="dropdown-item" href="#" onclick="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> LOG OUT</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container-fluid mt-4">
+  <div class="row justify-content-center my-4 pt-3">
+    <div class="col-lg-9 col-md-10">
+      <p>You currently have <span id="userBytes"></span> <i class="fa fa-lock fa-bolt" aria-hidden="true"></i>
+      &nbsp;&nbsp;//&nbsp;&nbsp;View your past transactions <a href="myTransactions.html">here</a></p>
+    </div>
+    <div class="col-lg-9 col-md-10 form-group has-search">
+      <span class="fa fa-search form-control-feedback"></span>
+      <input class="form-control" id="filterInput" type="text" placeholder="Search" onkeyup="filterCards()">
+    </div>
+    <div class="col-lg-9 col-md-10">
+      <p id="noMatch">There is no match found for ' '.</p>
+    </div>
+  </div> <!--Search-->
+
+  <div class="row justify-content-center my-4 text-dark">
+    <div class="card-deck col-lg-9 col-md-10" id="redemptionCards">
+      <div class="cardDiv col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header text-center">
+            <h5 class="card-title m-0">Grab Voucher</h5>
+          </div>
+          <img class="card-img img-fluid" src="image/grabVoucher.jpg" alt="Grab Voucher">
+          <div class="card-body">
+            <p class="card-text">
+              <b>SG $5 Grab Voucher</b>
+              <br>Valid only in Singapore
+            </p>
+          </div>
+          <button class="btn btn-info text-center" onclick="redeem(this)" data-toggle="modal" data-target="#redemptionModal">5000 <i class="fa fa-lock fa-bolt" aria-hidden="true"></i></button>
+        </div>
+      </div> <!--Grab Voucher-->
+
+      <div class="cardDiv col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header text-center">
+            <h5 class="card-title m-0">Popular Voucher</h5>
+          </div>
+          <img class="card-img img-fluid" src="image/popularVoucher.jpg" alt="Popular Voucher">
+          <div class="card-body">
+            <p class="card-text">
+              <b>SG $5 Popular Voucher</b>
+              <br>Valid only in Singapore
+            </p>
+          </div>
+          <button class="btn btn-info text-center" onclick="redeem(this)" data-toggle="modal" data-target="#redemptionModal">5000 <i class="fa fa-lock fa-bolt" aria-hidden="true"></i></button>
+        </div>
+      </div> <!--Popular Voucher-->
+
+      <div class="cardDiv col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header text-center">
+            <h5 class="card-title m-0">Portable Charger</h5>
+          </div>
+          <img class="card-img img-fluid" src="image/portableCharger.jpg" alt="Portable Charger">
+          <div class="card-body">
+            <p class="card-text">
+              <b>Mi Power Bank Pro</b>
+              <br>Power: 10000mAh
+              <br>USB Type-C
+            </p>
+          </div>
+          <button class="btn btn-info text-center" onclick="redeem(this)" data-toggle="modal" data-target="#redemptionModal">5000 <i class="fa fa-lock fa-bolt" aria-hidden="true"></i></button>
+        </div>
+      </div> <!--Portable Charger-->
+
+      <div class="cardDiv col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header text-center">
+            <h5 class="card-title m-0">Mechanical Gaming Keyboard</h5>
+          </div>
+          <img class="card-img img-fluid" src="image/gamingKeyboard.jpg" alt="Mechanical Gaming Keyboard">
+          <div class="card-body">
+            <p class="card-text">
+              <b>Cooler Master MasterKeys Pro L RGB</b>
+              <br>RGB lighting
+              <br>Cherry MX Red switches
+              <br>2 year warranty
+            </p>
+          </div>
+          <button class="btn btn-info text-center" onclick="redeem(this)" data-toggle="modal" data-target="#redemptionModal">25000 <i class="fa fa-lock fa-bolt" aria-hidden="true"></i></button>
+        </div>
+      </div> <!--Gaming Mouse-->
+
+      <div class="cardDiv col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header text-center">
+            <h5 class="card-title m-0">Gaming Mouse</h5>
+          </div>
+          <img class="card-img img-fluid" src="image/gamingMouse.jpg" alt="Gaming Mouse">
+          <div class="card-body">
+            <p class="card-text">
+              <b>Razor Deathadder Essential</b>
+              <br>5 Hyperesponse Buttons
+              <br>Up to 10 Million Clicks
+              <br>2 year warranty
+            </p>
+          </div>
+          <button class="btn btn-info text-center" onclick="redeem(this)" data-toggle="modal" data-target="#redemptionModal">50000 <i class="fa fa-lock fa-bolt" aria-hidden="true"></i></button>
+        </div>
+      </div> <!--Gaming Mouse-->
+
+      <div class="cardDiv col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-header text-center">
+            <h5 class="card-title m-0">Headset</h5>
+          </div>
+          <img class="card-img img-fluid" src="image/headset.jpg" alt="Headset">
+          <div class="card-body">
+            <p class="card-text">
+              <b>Logitech Pro Graming Headset</b>
+              <br>Surround sound audio
+              <br>Passive noise isolation
+              <br>Pro-grade condensor microphone
+            </p>
+          </div>
+          <button class="btn btn-info text-center" onclick="redeem(this)" data-toggle="modal" data-target="#redemptionModal">50000 <i class="fa fa-lock fa-bolt" aria-hidden="true"></i></button>
+        </div>
+      </div> <!--Headset-->
+
+    </div> <!--Card deck-->
+  </div>
+</div> <!--Container-->
+
+<div class="modal fade text-dark" id="redemptionModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mr-auto" id="modalLabel">Redemption</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <form id="redemptioInfo" action="" method="post" onsubmit="return saveFormData()">
+              <div class="form-group form-row">
+                <div class="col">
+                  <input class="form-control" type="text" placeholder="First Name" id="firstName" tabindex="1" required>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="text" placeholder="Last Name" id="lastName" tabindex="2" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="email" placeholder="Email" id="email" tabindex="3" required>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="tel" placeholder="Contact No." id="contactNo" tabindex="4">
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="Address" id="address" tabindex="5" required>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" rows="2" placeholder="Remarks (optional)" id="remarks" tabindex="6"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit" tabindex="6">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div> <!--Modal body-->
+    </div>
+  </div>
+</div> <!--Checkout Modal-->
+
+</body>
+</html>

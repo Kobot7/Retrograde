@@ -1,0 +1,89 @@
+/*Name: Ko Jia Ling
+  Admin no: 190681D*/
+
+/*Game board*/
+#gameboard {
+  border: 2px solid lime;
+}
+
+.imgBlock {
+  height: 80px;
+  width: 80px;
+  border: 1px solid grey;
+  cursor: grab;
+}
+
+.imgBlock:active {
+  cursor: grabbing;
+}
+
+.imgBlock img {
+  height: 80px;
+  width: 80px;
+}
+
+.hide {
+  visibility: hidden;
+  z-index: 1;
+}
+
+#gameInfo p {
+  color: red;
+}
+
+#gameInfo img {
+  height: 200px;
+  width: 200px;
+  border: 1px solid white;
+}
+
+#puzzleTitle {
+  position: absolute;
+  top: 325px;
+}
+
+#puzzleTitle h1 {
+  font-size: 75px;
+  color: red;
+}
+
+#finalTime {
+  position: absolute;
+  top: 450px;
+}
+
+#buttons {
+  position: absolute;
+  top: 500px;
+}
+
+#stats-score {
+  font-size: 20px;
+  color: red;
+}
+
+#startGame {
+  z-index: 1;
+  width: 200px;
+}
+
+/*Leaderboard*/
+th, td {
+  color: white;
+}
+
+.table th {
+  border-top: none;
+}
+
+.table tr td {
+  height: 50px;
+}
+
+table tbody tr img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-right: 10px;
+}

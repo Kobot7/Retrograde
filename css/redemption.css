@@ -1,0 +1,31 @@
+/*Name: Ko Jia Ling
+  Admin no: 190681D*/
+
+.card {
+  border: none;
+}
+
+.card-body {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .fa-search {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+a[href="myTransactions.html"] {
+  color: lime;
+}

@@ -1,0 +1,155 @@
+/*Name: Ko Jia Ling
+  Admin no: 190681D*/
+
+/*Game board*/
+canvas {
+  border: 2px solid lime;
+}
+
+.hide {
+  visibility: hidden;
+  z-index: 1;
+}
+
+#controls {
+  position: absolute;
+  top: 520px;
+}
+
+#stats-score {
+  font-size: 20px;
+  color: red;
+}
+
+#startGame {
+  z-index: 1;
+}
+
+.btn-mode {
+  color: #D0D0D0;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-mode:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.btn-mode:focus, .btn-mode.focus {
+  box-shadow: none;
+}
+
+.btn-mode:not(:disabled):not(.disabled):active, .btn-mode:not(:disabled):not(.disabled).active,
+.show > .btn-mode.dropdown-toggle {
+  color: #fff;
+  background-color: #545b62;
+  border-color: #4e555b;
+}
+
+th, td {
+  color: white;
+}
+
+a.notActive{
+  color: white;
+  background-color: black;
+}
+
+#modeButtons, #startGame {
+  width: 400px;
+}
+
+
+/*Leaderboard*/
+.nav-tabs {
+  border: none;
+}
+
+ul.nav-tabs li.nav-item a {
+  color: #495057;
+  border-bottom: 1px solid white;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: lime;
+  background-color: black;
+  border-bottom: none;
+}
+
+.table th {
+  border-top: none;
+}
+
+.table tr td {
+  height: 50px;
+}
+
+table tbody tr img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-right: 10px;
+}
+
+
+/*Snake designs, Modal body*/
+img {
+  width: 100%;
+}
+
+input[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type=radio]:checked + img {
+  border: 5px solid lime;
+}
+
+input[type=radio] + img {
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+input[type=radio]:disabled + img {
+  cursor: default;
+}
+
+
+/*How to Play*/
+img[src='image/arrowKeys.png'], img[src='image/wasdKeys.png'] {
+  height: 80px;
+  width: 80px;
+}
+
+h5.modal-title + p span.retro {
+  color: red;
+  animation: flash 1.8s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    visibility: visible;
+  }
+
+  49.99% {
+    visibility: visible;
+  }
+
+  50% {
+    visibility: hidden;
+  }
+
+  99.99% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+  }
+}

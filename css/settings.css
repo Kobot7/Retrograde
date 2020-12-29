@@ -1,0 +1,70 @@
+/*Name: Ko Jia Ling
+  Admin no: 190681D*/
+
+.fa-check {
+  color: #53ff1a;
+}
+
+.fa-times {
+  color: red;
+}
+
+label {
+  font-family: bigPixel-light, monospace;
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+#userInfo {
+  margin-top: 40px;
+}
+
+#profilePic {
+  height: 150px;
+  width: 150px;
+  border: 3px solid lime;
+  border-radius: 5%;
+}
+
+#changeProfilePic {
+  height: 30px;
+  width: 150px;
+  padding: 2px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+img {
+  width: 100%;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: lime;
+  outline: 0;
+  box-shadow: 0 0 1rem 0.2rem lime;
+}
+
+i.fa-clone:hover {
+  cursor: pointer;
+}
+
+/*Modal body*/
+input[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type=radio] + img {
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+input[type=radio]:checked + img {
+  border: 5px solid lime;
+}

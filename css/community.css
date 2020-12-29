@@ -1,0 +1,47 @@
+/*Name: Ko Jia Ling
+  Admin no: 190681D*/
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .fa-search {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+/*Table*/
+th, td {
+  color: white;
+}
+
+table th {
+  border-top: none;
+}
+
+table tbody tr:hover {
+  background-color: grey;
+}
+
+table tbody tr td img {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-right: 10px;
+}
+
+table tbody tr td a, table tbody tr td a:hover {
+  color: white;
+}
+
+table tbody tr td a {
+  display: block;
+}

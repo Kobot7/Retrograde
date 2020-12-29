@@ -1,0 +1,29 @@
+/*Name: Ko Jia Ling
+  Admin no: 190681D*/
+
+h1 {
+  color: lime;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: lime;
+  outline: 0;
+  box-shadow: 0 0 1rem 0.2rem lime;
+}
+
+.card-deck .card {
+  margin: 2px;
+  background-color: black;
+  color: white;
+  font-family: bigPixel-reg, monospace;
+}
+
+span {
+  font-family: monospace;
+}
+
+.card:hover {
+  box-shadow: 0 0 1rem 0.07rem lime
+}
